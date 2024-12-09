@@ -8,6 +8,8 @@
         <title>Hanna Saffi - Computer Science Student</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- idk-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> 
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Google fonts-->
@@ -189,6 +191,7 @@
                 </div>
             </div>
         </section>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     </body>
 </html>
@@ -231,48 +234,154 @@
     </div>
 </section>
 
+
 <!-- Projects Section -->
-<section id="projects" style="padding-top: 50px; margin-bottom: 75px;"> <!-- Add margin-bottom inline -->
+<section id="projects" style="padding-top: 50px; margin-bottom: 75px;"> 
     <div class="container px-4 px-lg-5">
         <h2 class="text-center mt-0">Projects</h2>
         <hr class="divider" />
-        <div class="row gx-4 gx-lg-5">
-    <style>
-        /* Custom CSS to move text to the right */
-        .portfolio-box-caption {
-            text-align: center; /* Align text to the center */
-        }
-    </style>
-    <style>
-        /* Custom CSS to change text color to orange */
-        .portfolio-box-caption .project-category,
-        .portfolio-box-caption .project-name {
-            color: orange; /* Change text color to orange */
-        }
-    </style>
-    <div class="container-fluid p-0" style="margin-top: 150px;">
-        <div class="row justify-content-center g-4"> <!-- Added justify-content-center for centering -->
-            <div class="col-lg-5 col-md-6 mb-4"> <!-- Adjusted column size for better centering -->
-                <img class="img-fluid" src="assets/img/resized_image_650x350.png" alt="Expiration Alert System" style="margin-top: 5px;"/> <!-- Add margin-top to image -->
-                <div class="portfolio-box-caption">
-                    <div class="project-category text-white-50" style="margin-bottom: 20px;"> <!-- Add margin-bottom -->
-                        Project
+
+        <style>
+            .portfolio-box-caption {
+                text-align: center; 
+            }
+
+            /* Remove default background of carousel controls */
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                background-image: none !important;
+                width: 30px;
+                height: 30px;
+                display: inline-block;
+                color: #fff;
+                font-size: 2rem;
+                font-weight: bold;
+                text-align: center;
+                line-height: 30px;
+            }
+
+            .carousel-control-prev-icon::after {
+                content: '←';
+            }
+
+            .carousel-control-next-icon::after {
+                content: '→';
+            }
+
+            /* Hover overlay styles */
+            .carousel-item {
+                position: relative; 
+            }
+
+            .hover-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 10px;
+                background-color: rgba(255, 255, 255, 0.7); /* slightly transparent white */
+                color: #000;
+                text-align: center;
+                opacity: 0; 
+                transition: opacity 0.3s ease;
+            }
+
+            .carousel-item:hover .hover-overlay {
+                opacity: 1; 
+            }
+
+            /* Make the project heading in the overlay brown */
+            .hover-overlay h4 {
+                color: brown !important;
+            }
+
+            /* Positioning the default carousel controls at the vertical center of the image */
+            .carousel-control-prev, .carousel-control-next {
+                width: auto;
+                height: auto;
+                top: 50%;
+                transform: translateY(-50%);
+                opacity: 1;
+            }
+
+            .carousel-control-prev {
+                left: 20px;
+            }
+
+            .carousel-control-next {
+                right: 20px;
+            }
+        </style>
+
+        <!-- Carousel (Bootstrap 5) -->
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" style="margin-top: 20px;">
+
+            <!-- Updated Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+        
+            <!-- Carousel Inner -->
+            <div class="carousel-inner">
+                <!-- First Slide -->
+                <div class="carousel-item active">
+                    <img src="assets/img/1.png" class="d-block w-100 img-fluid" alt="Expiration Alert System" style="margin-top: 5px;">
+                    <div class="hover-overlay">
+                        <h4>DISAB Expiration Alert System</h4>
+                        <p>Designed and deployed an expiration alert system in Visual Basic, boosting efficiency by 20% through Outlook-based notifications.</p>
                     </div>
-                    <div class="project-name">DISAB Expiration Alert System</div>
+                </div>
+        
+                <!-- Second Slide -->
+                <div class="carousel-item">
+                    <img src="assets/img/2.png" class="d-block w-100 img-fluid" alt="CS Club Website" style="margin-top: 5px;">
+                    <div class="hover-overlay">
+                        <h4>CS Club Website Development</h4>
+                        <p>Co-developed the CS Club website, enhancing access to resources for 200+ students. Improved UI/UX using Figma, TypeScript, and API integration, creating a more intuitive and efficient platform while following Agile development practices.</p>
+                    </div>
+                </div>
+        
+                <!-- Third Slide -->
+                <div class="carousel-item">
+                    <img src="assets/img/3.png" class="d-block w-100 img-fluid" alt="Fincent" style="margin-top: 5px;">
+                    <div class="hover-overlay">
+                        <h4>Fincent</h4>
+                        <p> Built a Django backend to fetch financial data via Alpha Vantage API, store it in PostgreSQL, and implement a backtesting module with performance reports. Integrated a pre-trained ML model for stock predictions and designed an API for 30-day forecasts. Deployed the project on AWS using Docker and CI/CD pipelines, ensuring security and scalability.</p>
+                    </div>
+                </div>
+        
+                <!-- Fourth Slide -->
+                <div class="carousel-item">
+                    <img src="assets/img/4.png" class="d-block w-100 img-fluid" alt="Art Sphere (2nd Place)" style="margin-top: 5px;">
+                    <div class="hover-overlay">
+                        <h4>Art Sphere (2nd Place)</h4>
+                        <p>Developed RESTful APIs using Python and Flask to manage art data, leveraging Pandas for efficient in-memory manipulation of CSV-based art collections. This project earned second place at WesHack.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-5 col-md-6 mb-4"> <!-- Adjusted column size for better centering -->
-                <img class="img-fluid" src="assets/img/resized_image1.jpg" alt="CS Club Website" style="margin-top: 5px;"/> <!-- Add margin-top to image -->
-                <div class="portfolio-box-caption">
-                    <div class="project-category text-white-50" style="margin-bottom: 20px;"> <!-- Add margin-bottom -->
-                        Project
-                    </div>
-                    <div class="project-name">CS Club Website Development</div>
-                </div>
-            </div>
-        </div>
+        
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>        
+        <!-- End of Carousel -->
     </div>
 </section>
+
+
+
+
+  
+
 
 
 <!-- Contact Section with Orange Divider and Margins -->
@@ -303,7 +412,7 @@
                 <section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in"> <!-- Added margin between video sections -->
                     <div class="content">
                         <ul class="actions stacked">
-                            <li><a href="https://drive.google.com/file/d/1IAlCgT5HNsyDf5T9o5q32V8nsDuK3XJ6/view?usp=sharing" class="button">Resume</a></li>
+                            <li><a href="https://drive.google.com/file/d/1FaxlbZjfKrug5shoXeipiLYDtnS081F1/view?usp=drive_link" class="button">Resume</a></li>
                         </ul>
                     </div>
                     <div class="video">
